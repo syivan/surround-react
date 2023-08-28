@@ -1,0 +1,25 @@
+.main-container {
+  display: flex;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.tab {
+  flex: 1 1 150px;
+}
+
+#content-tab {
+  flex: 2;
+}
+
+#effect-tab {
+  background-color: greenyellow;
+}
+
+#yt-search {
+  width: 50%;
+}
+
+#yt-button {
+  background-color: whitesmoke;
+}
