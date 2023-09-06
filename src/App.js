@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-import AppSwitch from "./components/AppSwitch";
+import Initialization from "./components/Initialization";
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
       </Navbar>
       <div className="main-container mt-2">
         <Card className="tab" id="content-tab">
-          <AppSwitch />
+          <Initialization />
         </Card>
         <Card className="tab ms-2">
           <Card.Body>Nice one</Card.Body>
