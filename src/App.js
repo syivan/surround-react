@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootswatch/dist/lux/bootstrap.min.css";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-import Initialization from "./components/Initialization";
+import SearchBar from "./components/SearchBar";
+import YTSearch from 'youtube-api-search';
 
 const App = () => {
+
+  const [videos, setVideos] = useState([]);
+  const [currentVideo, setCurrentVideo] = useState(null);
+
+  const handleSubmit = (searchBarQuery) => {
+    YTSearch({
+      key: process.env.API_KEY,
+      term: searchBarQuery
+    },
+      (videos) => {
+        setVideos(videos);
+        setCurrentVideo(videos[0]);
+      })
+  }
+
   return (
     <>
       <Navbar className="navbarContainer bg-primary">
@@ -17,7 +32,7 @@ const App = () => {
       </Navbar>
       <div className="main-container mt-2">
         <Card className="tab" id="content-tab">
-          <Initialization />
+          <SearchBar />
         </Card>
         <Card className="tab ms-2">
           <Card.Body>Nice one</Card.Body>
