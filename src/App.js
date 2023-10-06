@@ -1,20 +1,37 @@
 import React, { useState } from "react";
 import NavHeader from "./components/NavHeader.js";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, FormControl } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 const App = () => {
   return (
     <>
       <NavHeader />
+      <br></br>
       <Container>
         <Row>
-          <Col>1 of 2</Col>
-          <Col>2 of 2</Col>
+          <Form>
+            <Row>
+              <Col xs={10} className="border border-primary">
+                <Form.Control
+                  size="md"
+                  type="text"
+                  placeholder="Enter text here..."
+                ></Form.Control>
+              </Col>
+              <Col className="border border-primary">
+                <Button size="sm" variant="primary">
+                  Search
+                </Button>
+              </Col>
+            </Row>
+          </Form>
         </Row>
         <Row>
-          <Col>1 of 3</Col>
-          <Col>2 of 3</Col>
-          <Col>3 of 3</Col>
+          <Col xs={8} lg={8} className="border border-primary">
+            Video
+          </Col>
+          <Col className="border border-primary">Suggestions</Col>
         </Row>
       </Container>
     </>
