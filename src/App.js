@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavHeader from "./components/NavHeader.js";
 import { Container, Row, Col, FormControl } from "react-bootstrap";
 import { Button, Form } from "react-bootstrap";
+import Composition from "./components/video/Composition.js";
 
 const App = () => {
   return (
@@ -28,10 +29,7 @@ const App = () => {
           </Form>
         </Row>
         <Row>
-          <Col xs={8} lg={8} className="border border-primary">
-            Video
-          </Col>
-          <Col className="border border-primary">Suggestions</Col>
+          <Composition />
         </Row>
       </Container>
     </>
