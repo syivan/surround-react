@@ -6,7 +6,7 @@ import Composition from "./components/video/Composition.js";
 
 const App = () => {
   return (
-    <>
+    <React.Fragment>
       <NavHeader />
       <br></br>
       <Container>
@@ -32,7 +32,7 @@ const App = () => {
           <Composition />
         </Row>
       </Container>
-    </>
+    </React.Fragment>
   );
 };
 
