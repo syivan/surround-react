@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -9,15 +9,25 @@ export default function SearchBar() {
     setSearchTerm(event.target.value);
   };
 
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log(searchTerm);
+  };
+
   return (
-    <div>
-      <Form.Control
-        size="md"
-        type="text"
-        placeholder="Enter text here..."
-        value={searchTerm}
-        onChange={handleChange}
-      ></Form.Control>
-    </div>
+    <React.Fragment>
+      <Form className="d-flex align-items-end">
+        <Form.Control
+          size="md"
+          type="text"
+          placeholder="Enter text here..."
+          value={searchTerm}
+          onChange={handleChange}
+        ></Form.Control>
+        <Button type="input" size="sm" variant="primary" onClick={onSubmit}>
+          Search
+        </Button>
+      </Form>
+    </React.Fragment>
   );
 }
