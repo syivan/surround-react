@@ -1,7 +1,7 @@
 import React from "react";
 import "../../style.css";
 
-export default function FrontVideo() {
+export default function VideoFront() {
   return (
     <React.Fragment>
       <div>

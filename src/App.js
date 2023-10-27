@@ -1,26 +1,26 @@
 import React, { useEffect } from "react";
 import NavHeader from "./components/NavHeader.js";
 import { Container, Row, Col, FormControl } from "react-bootstrap";
-import Composition from "./components/video/Composition.js";
 import SearchBar from "./components/search/SearchBar.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SearchFeed from "./components/SearchFeed.js";
+import VideoDisplay from "./components/VideoDisplay.js";
 
 const App = () => {
-  console.log(process.env.REACT_APP_YT_KEY);
-  console.log();
-
   return (
-    <React.Fragment>
+    <BrowserRouter>
       <NavHeader />
       <br></br>
       <Container>
         <Row className="mb-2">
           <SearchBar />
         </Row>
-        <Row>
-          <Composition />
-        </Row>
+        <Routes>
+          <Route path="/" element={<VideoDisplay />}></Route>
+          <Route path="/Search/:searchTerm" element={<SearchFeed />}></Route>
+        </Routes>
       </Container>
-    </React.Fragment>
+    </BrowserRouter>
   );
 };
 
