@@ -16,8 +16,8 @@ const App = () => {
           <SearchBar />
         </Row>
         <Routes>
-          <Route path="/" element={<VideoDisplay />}></Route>
-          <Route path="/Search/:searchTerm" element={<SearchFeed />}></Route>
+          <Route path="/" element={<SearchFeed />}></Route>
+          <Route path="/Search/:searchTerm" element={<VideoDisplay />}></Route>
         </Routes>
       </Container>
     </BrowserRouter>
