@@ -3,4 +3,6 @@ iframe {
   width: 100%;
 }
 
-
+.searchButton {
+  width: 10%;
+}

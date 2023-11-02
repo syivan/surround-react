@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Form, Button, Container } from "react-bootstrap";
-import Col from "react-bootstrap/Col";
+import { Form, Button, Stack } from "react-bootstrap";
+import "../style.css";
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,23 +16,23 @@ export default function SearchBar() {
   };
 
   return (
-    <Container fluid>
-      <Form className="d-flex align-items-end">
-        <Col>
-          <Form.Control
-            size="md"
-            type="text"
-            placeholder="Enter text here..."
-            value={searchTerm}
-            onChange={handleChange}
-          ></Form.Control>
-        </Col>
-        <Col>
-          <Button type="input" size="sm" variant="primary" onClick={onSubmit}>
-            Search
-          </Button>
-        </Col>
-      </Form>
-    </Container>
+    <Stack direction="horizontal" gap={3}>
+      <Form.Control
+        size="md"
+        type="text"
+        placeholder="Enter text here..."
+        value={searchTerm}
+        onChange={handleChange}
+      ></Form.Control>
+      <Button
+        className="searchButton"
+        type="input"
+        size="sm"
+        variant="primary"
+        onClick={onSubmit}
+      >
+        Search
+      </Button>
+    </Stack>
   );
 }
