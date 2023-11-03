@@ -4,5 +4,12 @@ iframe {
 }
 
 .searchButton {
-  width: 10%;
+  width: 10w%;
+}
+
+/* CARD COMPONENTS */
+.card-img {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
