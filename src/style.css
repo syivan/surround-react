@@ -4,12 +4,19 @@ iframe {
 }
 
 .searchButton {
-  width: 10w%;
+  width: 10%;
 }
 
 /* CARD COMPONENTS */
 .card-img {
   width: 100%;
-  height: 15vw;
-  object-fit: cover;
+  height: 180;
+}
+
+.card-title {
+  font-size: 14px;
+}
+
+.card-text {
+  font-size: 14px;
 }

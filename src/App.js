@@ -10,15 +10,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <NavHeader />
-      <Container className="mx-5">
-        <Row className="mb-2">
-          <SearchBar />
-        </Row>
-        <Routes>
-          <Route path="/" element={<SearchFeed />}></Route>
-          <Route path="/Search/:searchTerm" element={<VideoDisplay />}></Route>
-        </Routes>
-      </Container>
+      <Row className="mx-5">
+        <SearchBar />
+      </Row>
+      <Routes>
+        <Route path="/" element={<SearchFeed />}></Route>
+        <Route path="/Search/:searchTerm" element={<VideoDisplay />}></Route>
+        <Route path="/video/:videoId" element={<VideoDisplay />}></Route>
+      </Routes>
     </BrowserRouter>
   );
 };

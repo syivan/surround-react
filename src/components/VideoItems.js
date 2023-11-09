@@ -12,13 +12,7 @@ const VideoItems = ({ videos }) => {
   ));
 
   return (
-    // <Row
-    //   className="d-inline-flex flex-wrap justify-content-start gap-2"
-    //   direction="horizontal"
-    // >
-    //   {videoMap}
-    // </Row>
-    <Row md={3} lg={4} xs={2} className="">
+    <Row md={3} lg={4} xs={2} className="mt-4">
       {videoMap}
     </Row>
   );
