@@ -10,17 +10,24 @@ const VideoCard = ({
   },
 }) => {
   return (
-    <Card style={{ width: { md: "18px", xs: "100%" } }} className="mb-3">
+    <Card
+      style={{
+        width: { md: "18px", xs: "100%" },
+        borderRadius: "5px",
+        overflow: "hidden",
+      }}
+      className="mb-3"
+    >
       <Link to={`video/${videoId}`}>
         <Card.Img
           variant="top"
-          src={`http://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
+          src={`http://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
           className="card-img"
           alt={snippet.title}
-          style={{ height: "10rem" }}
+          style={{ height: "12rem" }}
         ></Card.Img>
       </Link>
-      <Card.Body style={{ height: "106px" }}>
+      <Card.Body style={{ height: "100px" }}>
         <Link to={`video/${videoId}`} style={{ textDecoration: "none" }}>
           <Card.Title className="card-title">
             {snippet.title.length >= 42

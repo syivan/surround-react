@@ -5,19 +5,25 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const SearchFeed = () => {
-  const [selectedCategory, setSelectedCategory] = useState(`dance`);
+  const [selectedCategory, setSelectedCategory] = useState(`popular`);
   const [videos, setVideos] = useState([]);
+  const { searchTerm } = useParams();
 
   useEffect(() => {
-    fetchAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+    fetchAPI(`search?part=snippet&q=${searchTerm}`).then((data) =>
       setVideos(data.items)
     );
-  }, [selectedCategory]);
+  }, [searchTerm]);
 
   return (
-    <div className="mx-5">
-      <VideoItems videos={videos} />
-    </div>
+    <React.Fragment>
+      <div className="mx-5">
+        <h2 className="search-banner">
+          Search Results for <span style={{ color: "red" }}>{searchTerm}</span>
+        </h2>
+        <VideoItems videos={videos} />
+      </div>
+    </React.Fragment>
   );
 };
 
