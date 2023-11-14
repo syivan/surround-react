@@ -18,9 +18,9 @@ const SearchFeed = () => {
   return (
     <React.Fragment>
       <div className="mx-5">
-        <h2 className="search-banner">
-          Search Results for <span style={{ color: "red" }}>{searchTerm}</span>
-        </h2>
+        <h3 className="search-banner">
+          Search Results for: <span style={{ color: "red" }}>{searchTerm}</span>
+        </h3>
         <VideoItems videos={videos} />
       </div>
     </React.Fragment>

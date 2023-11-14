@@ -18,7 +18,7 @@ const VideoCard = ({
       }}
       className="mb-3"
     >
-      <Link to={`video/${videoId}`}>
+      <Link to={`/video/${videoId}`}>
         <Card.Img
           variant="top"
           src={`http://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
@@ -28,7 +28,7 @@ const VideoCard = ({
         ></Card.Img>
       </Link>
       <Card.Body style={{ height: "100px" }}>
-        <Link to={`video/${videoId}`} style={{ textDecoration: "none" }}>
+        <Link to={`/video/${videoId}`} style={{ textDecoration: "none" }}>
           <Card.Title className="card-title">
             {snippet.title.length >= 42
               ? snippet.title.slice(0, 42) + "..."

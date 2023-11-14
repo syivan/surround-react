@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Form, Button, Stack } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "../style.css";
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate("");
 
   const handleChange = (event) => {
     console.log(searchTerm);
@@ -13,6 +15,12 @@ export default function SearchBar() {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log(searchTerm);
+
+    if (searchTerm) {
+      navigate(`/search/${searchTerm}`);
+    }
+
+    setSearchTerm("");
   };
 
   return (
