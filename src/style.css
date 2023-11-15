@@ -31,3 +31,13 @@ iframe {
   height: 77vh !important;
   width: 100% !important;
 }
+
+/* DISPLAY COMPONENTS */
+.channel-title {
+  font-weight: bold;
+  color: black;
+}
+
+.video-title {
+  font-weight: bold;
+}

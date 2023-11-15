@@ -1,38 +1,36 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Badge, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
 import { fetchAPI } from "../utils/fetchAPI";
 import { useState } from "react";
 import ReactPlayer from "react-player";
 import { useEffect } from "react";
-import Spinner from "react-bootstrap/Spinner";
+import Loading from "./Loading";
+import VideoItems from "./VideoItems";
 
 const VideoDisplay = () => {
   const [videoDetail, setVideoDetail] = useState(null);
+  const [relatedVideos, setRelatedVideos] = useState(null);
   const { videoId } = useParams();
 
   useEffect(() => {
     fetchAPI(`videos?part=snippet,statistics&id=${videoId}`).then((data) =>
       setVideoDetail(data.items[0])
     );
+
+    fetchAPI(`search?part=snippet&relatedToVideoId=${videoId}&type=video`).then(
+      (data) => setRelatedVideos(data.items)
+    );
   }, [videoId]);
 
   if (!videoDetail?.snippet) {
-    return (
-      <Container
-        style={{ width: "100%", height: "20rem" }}
-        className="d-flex align-items-center justify-content-center"
-      >
-        <div className="align-items-center justify-content-center">
-          <Spinner className="d-flex align-items-center" animation="border" />
-        </div>
-      </Container>
-    );
+    return <Loading />;
   }
 
+  console.log(relatedVideos);
   return (
-    <Container>
+    <React.Fragment>
       <Stack direction={{ xs: "vertical", md: "horizontal" }} className="mt-3">
         <Container className="d-flex">
           <Container
@@ -47,11 +45,33 @@ const VideoDisplay = () => {
               className="react-player"
               controls={true}
             />
-            <h5>{videoDetail.snippet.title}</h5>
+            <h5 className="mt-2 video-title">{videoDetail.snippet.title}</h5>
+            <Stack direction="horizontal" gap={3}>
+              <p className="channel-title">
+                {videoDetail.snippet.channelTitle}
+              </p>
+              <p className="ms-auto">
+                <Badge bg="light" text="dark">
+                  {parseInt(videoDetail.statistics.viewCount).toLocaleString() +
+                    " "}
+                  views
+                </Badge>
+              </p>
+              <p>
+                <Badge bg="light" text="dark">
+                  {parseInt(videoDetail.statistics.likeCount).toLocaleString() +
+                    " "}
+                  likes
+                </Badge>
+              </p>
+            </Stack>
           </Container>
         </Container>
       </Stack>
-    </Container>
+      <Container className="justify-content-center align-items-center">
+        <VideoItems videos={relatedVideos} direction={"column"} />
+      </Container>
+    </React.Fragment>
     // <div className="mx-5">
     //   <Row>
     //     <Col xs={8} lg={8} className="border border-primary">
