@@ -5,19 +5,33 @@ import Loading from "./Loading";
 import Stack from "react-bootstrap/Stack";
 
 const VideoItems = ({ videos, direction }) => {
-  console.log(videos);
-
   if (!videos?.length) return <Loading />;
 
+  let size;
+  if (direction === "column") {
+    size = {
+      imageSize: "8rem",
+      titleSize: "10px",
+      channelSize: "8px",
+      bodySize: "4rem",
+    };
+  } else {
+    size = {
+      imageSize: "12rem",
+      titleSize: "14px",
+      channelSize: "14px",
+      bodySize: "6rem",
+    };
+  }
   const videoMap = videos.map((item, index) => (
     <Container key={index}>
-      <VideoCard item={item} />
+      <VideoCard item={item} size={size} />
     </Container>
   ));
 
   if (direction === "column") {
     return (
-      <Stack direction="vertical" gap={1} style={{ width: "18rem" }}>
+      <Stack direction="vertical" gap={1} style={{ width: "10rem" }}>
         {videoMap}
       </Stack>
     );

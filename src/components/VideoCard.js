@@ -8,7 +8,9 @@ const VideoCard = ({
     id: { videoId },
     snippet,
   },
+  size,
 }) => {
+  console.log(size);
   return (
     <Card
       style={{
@@ -24,18 +26,24 @@ const VideoCard = ({
           src={`http://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
           className="card-img"
           alt={snippet.title}
-          style={{ height: "12rem" }}
+          style={{ height: `${size.imageSize}` }}
         ></Card.Img>
       </Link>
-      <Card.Body style={{ height: "100px" }}>
+      <Card.Body style={{ height: `${size.bodySize}` }}>
         <Link to={`/video/${videoId}`} style={{ textDecoration: "none" }}>
-          <Card.Title className="card-title">
+          <Card.Title /*className="card-title"*/
+            style={{ fontSize: `${size.titleSize}` }}
+          >
             {snippet.title.length >= 42
               ? snippet.title.slice(0, 42) + "..."
               : snippet.title}
           </Card.Title>
         </Link>
-        <Card.Text className="card-text">{snippet.channelTitle}</Card.Text>
+        <Card.Text /*className="card-text"*/
+          style={{ fontSize: `${size.channelSize}` }}
+        >
+          {snippet.channelTitle}
+        </Card.Text>
       </Card.Body>
     </Card>
   );

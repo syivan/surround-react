@@ -32,10 +32,10 @@ const VideoDisplay = () => {
   return (
     <React.Fragment>
       <Stack direction={{ xs: "vertical", md: "horizontal" }} className="mt-3">
-        <Container className="d-flex">
+        <div className="d-flex">
           <Container
             style={{
-              width: "100%",
+              width: "80%",
               position: "sticky",
               top: "86px",
             }}
@@ -66,11 +66,9 @@ const VideoDisplay = () => {
               </p>
             </Stack>
           </Container>
-        </Container>
+          <VideoItems videos={relatedVideos} direction={"column"} />
+        </div>
       </Stack>
-      <Container className="justify-content-center align-items-center">
-        <VideoItems videos={relatedVideos} direction={"column"} />
-      </Container>
     </React.Fragment>
     // <div className="mx-5">
     //   <Row>
