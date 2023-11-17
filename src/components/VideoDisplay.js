@@ -70,30 +70,6 @@ const VideoDisplay = () => {
         </div>
       </Stack>
     </React.Fragment>
-    // <div className="mx-5">
-    //   <Row>
-    //     <Col xs={8} lg={8} className="border border-primary">
-    //       <div>
-    //         <iframe
-    //           width="560"
-    //           height="315"
-    //           src="https://www.youtube.com/embed/OmCXwRjvDRo?si=AOMj7lpzY6fdCPI9"
-    //           title="YouTube video player"
-    //           frameborder="0"
-    //           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    //           allowfullscreen
-    //         ></iframe>
-    //       </div>
-    //       <div>
-    //         <div>Title Title</div>
-    //         <div>Description Description</div>
-    //       </div>
-    //     </Col>
-    //     <Col className="border border-primary">
-    //       <Suggestions />
-    //     </Col>
-    //   </Row>
-    // </div>
   );
 };
 

@@ -10,12 +10,11 @@ const VideoCard = ({
   },
   size,
 }) => {
-  console.log(size);
   return (
     <Card
       style={{
         width: { md: "18px", xs: "100%" },
-        borderRadius: "5px",
+        borderRadius: "12px",
         overflow: "hidden",
       }}
       className="mb-3"
@@ -31,7 +30,8 @@ const VideoCard = ({
       </Link>
       <Card.Body style={{ height: `${size.bodySize}` }}>
         <Link to={`/video/${videoId}`} style={{ textDecoration: "none" }}>
-          <Card.Title /*className="card-title"*/
+          <Card.Title
+            className="card-title"
             style={{ fontSize: `${size.titleSize}` }}
           >
             {snippet.title.length >= 42
@@ -39,9 +39,7 @@ const VideoCard = ({
               : snippet.title}
           </Card.Title>
         </Link>
-        <Card.Text /*className="card-text"*/
-          style={{ fontSize: `${size.channelSize}` }}
-        >
+        <Card.Text style={{ fontSize: `${size.channelSize}` }}>
           {snippet.channelTitle}
         </Card.Text>
       </Card.Body>
