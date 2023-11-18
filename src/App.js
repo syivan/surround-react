@@ -14,7 +14,7 @@ const App = () => {
         <SearchBar />
       </Row>
       <Routes>
-        {/* <Route path="/" element={<SearchFeed />}></Route> */}
+        <Route path="/" element={<SearchFeed />}></Route>
         <Route path="/search/:searchTerm" element={<SearchFeed />}></Route>
         <Route path="/video/:videoId" element={<VideoDisplay />}></Route>
       </Routes>
