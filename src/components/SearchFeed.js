@@ -11,7 +11,6 @@ const SearchFeed = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 8;
   const totalPosts = videos.length;
-  const [currentVideos, setCurrentVideos] = useState([]);
 
   const previousPage = () => {
     if (currentPage !== 1) setCurrentPage(currentPage - 1);
@@ -30,7 +29,7 @@ const SearchFeed = () => {
   useEffect(() => {
     fetchAPI(`search?part=snippet&q=${searchTerm}`)
       .then((data) => setVideos(data.items))
-      .then(setCurrentVideos(videos.slice(0, 8)));
+      .catch(console.log("PROMISE FAILED"));
   }, [searchTerm]);
 
   return (
@@ -39,7 +38,12 @@ const SearchFeed = () => {
         <h3 className="search-banner">
           Search Results for: <span style={{ color: "red" }}>{searchTerm}</span>
         </h3>
-        <VideoItems videos={currentVideos} />
+        <VideoItems
+          videos={videos.slice(
+            postsPerPage * (currentPage - 1),
+            postsPerPage * currentPage
+          )}
+        />
       </div>
       <Paginate
         postsPerPage={postsPerPage}
