@@ -4,7 +4,7 @@ const Paginate = ({
   postsPerPage,
   totalPosts,
   currentPage,
-  paginate,
+  paginate = null,
   previousPage,
   nextPage,
 }) => {
@@ -19,17 +19,18 @@ const Paginate = ({
         <li onClick={previousPage} className="page-number">
           Prev
         </li>
-        {pageNumbers.map((number) => (
-          <li
-            key={number}
-            onClick={() => paginate(number)}
-            className={
-              "page-number " + (number === currentPage ? "active" : "")
-            }
-          >
-            {number}
-          </li>
-        ))}
+        {paginate !== null &&
+          pageNumbers.map((number) => (
+            <li
+              key={number}
+              onClick={() => paginate(number)}
+              className={
+                "page-number " + (number === currentPage ? "active" : "")
+              }
+            >
+              {number}
+            </li>
+          ))}
         <li onClick={nextPage} className="page-number">
           Next
         </li>

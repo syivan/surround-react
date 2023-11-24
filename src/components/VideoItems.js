@@ -10,10 +10,10 @@ const VideoItems = ({ videos, direction }) => {
   let size;
   if (direction === "column") {
     size = {
-      imageSize: "8rem",
+      imageSize: "7.5rem",
       titleSize: "12px",
       channelSize: "10px",
-      bodySize: "5.5rem",
+      bodySize: "6rem",
     };
   } else {
     size = {
@@ -31,7 +31,11 @@ const VideoItems = ({ videos, direction }) => {
 
   if (direction === "column") {
     return (
-      <Stack direction="vertical" gap={1} style={{ width: "10rem" }}>
+      <Stack
+        direction="vertical"
+        gap={1}
+        style={{ width: "16rem", paddingLeft: "12px" }}
+      >
         {videoMap}
       </Stack>
     );

@@ -8,11 +8,28 @@ import ReactPlayer from "react-player";
 import { useEffect } from "react";
 import Loading from "./Loading";
 import VideoItems from "./VideoItems";
+import Paginate from "./Paginate";
+import "../style.css";
 
 const VideoDisplay = () => {
   const [videoDetail, setVideoDetail] = useState(null);
-  const [relatedVideos, setRelatedVideos] = useState(null);
+  const [relatedVideos, setRelatedVideos] = useState([]);
   const { videoId } = useParams();
+  const postsPerPage = 4;
+  const totalPosts = relatedVideos.length;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const nextPage = () => {
+    if (currentPage < Math.ceil(totalPosts / postsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const previousPage = () => {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   useEffect(() => {
     fetchAPI(`videos?part=snippet,statistics&id=${videoId}`).then((data) =>
@@ -31,14 +48,16 @@ const VideoDisplay = () => {
   console.log(relatedVideos);
   return (
     <React.Fragment>
-      <Stack direction={{ xs: "vertical", md: "horizontal" }} className="mt-3">
+      <Stack direction={{ xs: "vertical", md: "horizontal" }} className="mt-4">
         <div className="d-flex">
           <Container
             style={{
               width: "80%",
               position: "sticky",
               top: "86px",
+              marginRight: "0px",
             }}
+            className="ms-1"
           >
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${videoId}`}
@@ -66,7 +85,22 @@ const VideoDisplay = () => {
               </p>
             </Stack>
           </Container>
-          <VideoItems videos={relatedVideos} direction={"column"} />
+          <div>
+            <VideoItems
+              videos={relatedVideos.slice(
+                postsPerPage * (currentPage - 1),
+                postsPerPage * currentPage
+              )}
+              direction={"column"}
+            />
+            <Paginate
+              postsPerPage={4}
+              totalPosts={totalPosts}
+              currentPage={currentPage}
+              nextPage={nextPage}
+              prevPage={previousPage}
+            />
+          </div>
         </div>
       </Stack>
     </React.Fragment>
