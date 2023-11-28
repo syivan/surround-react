@@ -32,14 +32,16 @@ const VideoCard = ({
         <Link to={`/video/${videoId}`} style={{ textDecoration: "none" }}>
           <Card.Title
             className="card-title"
-            style={{ fontSize: `${size.titleSize}` }}
+            style={{ fontSize: `${size.titleSize}`, fontWeight: "bold" }}
           >
             {snippet.title.length >= 42
               ? snippet.title.slice(0, 42) + "..."
               : snippet.title}
           </Card.Title>
         </Link>
-        <Card.Text style={{ fontSize: `${size.channelSize}` }}>
+        <Card.Text
+          style={{ fontSize: `${size.channelSize}`, fontWeight: "bold" }}
+        >
           {snippet.channelTitle}
         </Card.Text>
       </Card.Body>

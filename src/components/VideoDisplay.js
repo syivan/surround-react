@@ -10,6 +10,7 @@ import Loading from "./Loading";
 import VideoItems from "./VideoItems";
 import Paginate from "./Paginate";
 import "../style.css";
+import SoundBar from "./SoundBar";
 
 const VideoDisplay = () => {
   const [videoDetail, setVideoDetail] = useState(null);
@@ -45,7 +46,6 @@ const VideoDisplay = () => {
     return <Loading />;
   }
 
-  console.log(relatedVideos);
   return (
     <React.Fragment>
       <Stack direction={{ xs: "vertical", md: "horizontal" }} className="mt-4">
@@ -84,6 +84,7 @@ const VideoDisplay = () => {
                 </Badge>
               </p>
             </Stack>
+            <SoundBar />
           </Container>
           <div>
             <VideoItems
