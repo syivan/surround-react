@@ -64,9 +64,10 @@ const VideoDisplay = () => {
               className="react-player"
               controls={true}
             />
-            <h5 className="mt-2 video-title">{videoDetail.snippet.title}</h5>
+            <h5 className="mt-3 video-title">{videoDetail.snippet.title}</h5>
             <Stack direction="horizontal" gap={3}>
               <p className="channel-title">
+                <span style={{ color: "red" }}>Channel:</span>{" "}
                 {videoDetail.snippet.channelTitle}
               </p>
               <p className="ms-auto">

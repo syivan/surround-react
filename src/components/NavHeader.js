@@ -17,7 +17,7 @@ function NavHeader() {
             className="text-white ms-3"
             onClick={handleClick}
           >
-            Surround
+            SURROUND
           </Navbar.Brand>
         </Container>
       </Navbar>

@@ -1,3 +1,7 @@
+* {
+  text-transform: capitalize;
+}
+
 iframe {
   display: block;
   width: 100%;
@@ -15,6 +19,7 @@ iframe {
 
 .card-title {
   text-transform: capitalize;
+  letter-spacing: normal;
 }
 
 .search-banner {
@@ -23,7 +28,7 @@ iframe {
 }
 
 .react-player {
-  height: 77vh !important;
+  height: 72vh !important;
   width: 100% !important;
 }
 
@@ -34,7 +39,10 @@ iframe {
 }
 
 .video-title {
+  font-size: 1.2rem;
   font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: normal;
 }
 
 /* PAGINATION COMPONENTS */
@@ -75,4 +83,15 @@ iframe {
 
 .paginate-column {
   margin: 0;
+}
+
+/** SOUND COMPONENTS */
+
+.sound-label {
+  letter-spacing: -1px;
+  text-transform: capitalize;
+}
+
+.slider {
+  width: 75%;
 }

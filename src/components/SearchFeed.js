@@ -30,6 +30,8 @@ const SearchFeed = () => {
     fetchAPI(`search?part=snippet&q=${searchTerm}`)
       .then((data) => setVideos(data.items))
       .catch(console.log("PROMISE FAILED"));
+
+    setCurrentPage(1);
   }, [searchTerm]);
 
   return (

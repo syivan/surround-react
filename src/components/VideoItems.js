@@ -11,14 +11,14 @@ const VideoItems = ({ videos, direction }) => {
   if (direction === "column") {
     size = {
       imageSize: "7.5rem",
-      titleSize: "12px",
+      titleSize: "0.8rem",
       channelSize: "10px",
-      bodySize: "6rem",
+      bodySize: "5.5rem",
     };
   } else {
     size = {
       imageSize: "12rem",
-      titleSize: "14px",
+      titleSize: "1rem",
       channelSize: "14px",
       bodySize: "6rem",
     };
