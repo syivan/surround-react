@@ -2,20 +2,25 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "../style.css";
 
-const SoundBox = () => {
+const SoundBox = ({ controlPlay }) => {
   const [volume, setVolume] = useState(0);
-  const [playing, isPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     let audioPlayer = document.getElementById("audio-player");
 
-    if (volume >= 0.02 && isPlaying) {
+    if (volume >= 0.02) {
       audioPlayer.volume = volume;
-      audioPlayer.play();
+      if (!isPlaying) {
+        setIsPlaying(true);
+        audioPlayer.play();
+      }
     } else {
+      setIsPlaying(false);
       audioPlayer.pause();
     }
   }, [volume]);
+
   return (
     <div className="d-flex justify-content-center">
       <img
@@ -44,7 +49,7 @@ const SoundBox = () => {
         ></input>
 
         {
-          <audio autoPlay={false} preload="auto" id="audio-player">
+          <audio autoPlay={isPlaying} preload="auto" id="audio-player">
             <source
               src={require("./..//static/audio/rain.mp4")}
               type="audio/mp4"

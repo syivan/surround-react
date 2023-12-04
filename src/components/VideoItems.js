@@ -23,6 +23,9 @@ const VideoItems = ({ videos, direction }) => {
       bodySize: "6rem",
     };
   }
+
+  videos = videos.filter((item) => item.id.kind === "youtube#video");
+  
   const videoMap = videos.map((item, index) => (
     <Container key={index}>
       <VideoCard item={item} size={size} />
