@@ -2,13 +2,11 @@ import React from "react";
 import { Row, Container, Col } from "react-bootstrap";
 import SoundBox from "./SoundBox";
 import { useState, useEffect } from "react";
+import PlayControl from "./PlayControl";
+import { data } from "../files";
 
 const SoundBar = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-
-  useEffect(() => {
-    console.log("hello");
-  }, [isPlaying]);
 
   function controlButton() {
     setIsPlaying(!isPlaying);
@@ -19,14 +17,29 @@ const SoundBar = () => {
       <Container>
         <Row lg={3} md={2} sm={1} className="mt-1">
           <Col>
-            <SoundBox controlButton={controlButton} />
-          </Col>
-          {/* <Col>
-            <SoundBox />
+            <SoundBox
+              key={1}
+              playOn={isPlaying}
+              data={data[0]}
+              playerID={data[0].playerID}
+            />
           </Col>
           <Col>
-            <SoundBox />
-          </Col> */}
+            <SoundBox
+              key={2}
+              playOn={isPlaying}
+              data={data[1]}
+              playerID={data[1].playerID}
+            />
+          </Col>
+          <Col>
+            <SoundBox
+              key={3}
+              playOn={isPlaying}
+              data={data[2]}
+              playerID={data[2].playerID}
+            />
+          </Col>
         </Row>
         <Row lg={3} md={2} sm={1} className="mt-2 mb-3">
           {/* <Col>
@@ -39,8 +52,8 @@ const SoundBar = () => {
             <SoundBox />
           </Col> */}
         </Row>
-        <PlayBack />
       </Container>
+      <PlayControl button={controlButton} status={isPlaying} />
     </React.Fragment>
   );
 };

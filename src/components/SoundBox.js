@@ -2,31 +2,27 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "../style.css";
 
-const SoundBox = ({ controlPlay }) => {
+const SoundBox = ({ playOn, data, playerID }) => {
   const [volume, setVolume] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
-    let audioPlayer = document.getElementById("audio-player");
+    let audioPlayer = document.getElementById(playerID);
+    audioPlayer.volume = volume;
 
-    if (volume >= 0.02) {
-      audioPlayer.volume = volume;
-      if (!isPlaying) {
-        setIsPlaying(true);
-        audioPlayer.play();
-      }
+    if (volume >= 0.02 && playOn) {
+      audioPlayer.play();
     } else {
-      setIsPlaying(false);
       audioPlayer.pause();
     }
-  }, [volume]);
+  }, [volume, playOn]);
 
   return (
     <div className="d-flex justify-content-center">
       <img
-        src={require(`./..//static/img/rain.png`)}
+        src={require(`./..//static/img/${data.imageID}`)}
         height={100}
         width={100}
+        alt={data.name}
       ></img>
       <div
         style={{
@@ -34,7 +30,7 @@ const SoundBox = ({ controlPlay }) => {
           marginLeft: "0",
         }}
       >
-        <h3 className="ms-2 sound-label">Rain</h3>
+        <h3 className="ms-2 sound-label">{data.name}</h3>
         <input
           type="range"
           min="0"
@@ -49,9 +45,9 @@ const SoundBox = ({ controlPlay }) => {
         ></input>
 
         {
-          <audio autoPlay={isPlaying} preload="auto" id="audio-player">
+          <audio preload="auto" id={playerID} loop>
             <source
-              src={require("./..//static/audio/rain.mp4")}
+              src={require(`./..//static/audio/${data.audioID}`)}
               type="audio/mp4"
             ></source>
           </audio>
