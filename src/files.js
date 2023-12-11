@@ -17,7 +17,22 @@ export const data = [
     audioID: "cafe.mp4",
     playerID: "cafe-player",
   },
-  { name: "Fireplace", imageID: "fire.png", audioID: "fire.mp4" },
-  { name: "Birds", imageID: "birds.png", audioID: "birds.mp4" },
-  { name: "Stream", imageID: "stream.png", audioID: "stream.mp4" },
+  {
+    name: "Fireplace",
+    imageID: "fire.png",
+    audioID: "fire.mp4",
+    playerID: "fire-player",
+  },
+  {
+    name: "Birds",
+    imageID: "bird.png",
+    audioID: "birds.mp4",
+    playerID: "bird-player",
+  },
+  {
+    name: "Stream",
+    imageID: "stream.png",
+    audioID: "stream.mp4",
+    playerID: "stream-player",
+  },
 ];

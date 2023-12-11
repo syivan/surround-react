@@ -42,15 +42,30 @@ const SoundBar = () => {
           </Col>
         </Row>
         <Row lg={3} md={2} sm={1} className="mt-2 mb-3">
-          {/* <Col>
-            <SoundBox />
+          <Col>
+            <SoundBox
+              key={4}
+              playOn={isPlaying}
+              data={data[3]}
+              playerID={data[3].playerID}
+            />
           </Col>
           <Col>
-            <SoundBox />
+            <SoundBox
+              key={5}
+              playOn={isPlaying}
+              data={data[4]}
+              playerID={data[4].playerID}
+            />
           </Col>
           <Col>
-            <SoundBox />
-          </Col> */}
+            <SoundBox
+              key={6}
+              playOn={isPlaying}
+              data={data[5]}
+              playerID={data[5].playerID}
+            />
+          </Col>
         </Row>
       </Container>
       <PlayControl button={controlButton} status={isPlaying} />
