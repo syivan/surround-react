@@ -95,3 +95,18 @@ iframe {
 .slider {
   width: 75%;
 }
+
+.icon-prop {
+  height: 6rem;
+  width: 6rem;
+  margin-right: 1rem;
+}
+
+.play-button-section {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.footer-section {
+  background-color: black;
+}

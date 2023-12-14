@@ -41,7 +41,7 @@ const SoundBar = () => {
             />
           </Col>
         </Row>
-        <Row lg={3} md={2} sm={1} className="mt-2 mb-3">
+        <Row lg={3} md={2} sm={1} className="mt-3 mb-3">
           <Col>
             <SoundBox
               key={4}
@@ -68,7 +68,9 @@ const SoundBar = () => {
           </Col>
         </Row>
       </Container>
-      <PlayControl button={controlButton} status={isPlaying} />
+      <div className="play-button-section">
+        <PlayControl button={controlButton} status={isPlaying} />
+      </div>
     </React.Fragment>
   );
 };

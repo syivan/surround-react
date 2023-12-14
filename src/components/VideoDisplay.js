@@ -100,7 +100,7 @@ const VideoDisplay = () => {
               totalPosts={totalPosts}
               currentPage={currentPage}
               nextPage={nextPage}
-              prevPage={previousPage}
+              previousPage={previousPage}
             />
           </div>
         </div>

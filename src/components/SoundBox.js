@@ -23,6 +23,7 @@ const SoundBox = ({ playOn, data, playerID }) => {
         height={100}
         width={100}
         alt={data.name}
+        className="icon-prop"
       ></img>
       <div
         style={{
@@ -30,7 +31,7 @@ const SoundBox = ({ playOn, data, playerID }) => {
           marginLeft: "0",
         }}
       >
-        <h3 className="ms-2 sound-label">{data.name}</h3>
+        <h3 className="sound-label">{data.name}</h3>
         <input
           type="range"
           min="0"
