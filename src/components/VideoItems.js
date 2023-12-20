@@ -25,7 +25,7 @@ const VideoItems = ({ videos, direction }) => {
   }
 
   videos = videos.filter((item) => item.id.kind === "youtube#video");
-  
+
   const videoMap = videos.map((item, index) => (
     <Container key={index}>
       <VideoCard item={item} size={size} />
@@ -44,7 +44,7 @@ const VideoItems = ({ videos, direction }) => {
     );
   } else {
     return (
-      <Row md={3} lg={4} xs={2} className="mt-4">
+      <Row md={4} lg={6} xs={2} xl={8} className="mt-4 d-flex flex-wrap">
         {videoMap}
       </Row>
     );

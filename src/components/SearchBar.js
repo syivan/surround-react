@@ -24,20 +24,21 @@ export default function SearchBar() {
   };
 
   return (
-    <Stack direction="horizontal" gap={3}>
+    <Stack direction="horizontal" gap={3} className="search-section">
       <Form.Control
         size="md"
         type="text"
         placeholder="Enter text here..."
         value={searchTerm}
         onChange={handleChange}
+        className="search-bar"
       ></Form.Control>
       <Button
-        className="searchButton"
         type="input"
         size="sm"
         variant="primary"
         onClick={onSubmit}
+        className="search-button"
       >
         Search
       </Button>

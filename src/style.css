@@ -1,3 +1,7 @@
+#root {
+  width: 100%;
+}
+
 * {
   text-transform: capitalize;
 }
@@ -109,4 +113,23 @@ iframe {
 
 .footer-section {
   background-color: black;
+}
+
+.search-section {
+  display: flex;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.search-bar {
+  flex-grow: 2;
+}
+
+.search-button {
+  flex-grow: 1;
+  width: 10%;
+}
+
+.main-container {
+  width: 3000px;
 }
