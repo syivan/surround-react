@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Container } from "react-bootstrap";
+import { Accordion, Badge, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
 import { fetchAPI } from "../utils/fetchAPI";
@@ -85,9 +85,16 @@ const VideoDisplay = () => {
                 </Badge>
               </p>
             </Stack>
-            <SoundBar />
+            <Accordion>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>A Sound Ambience</Accordion.Header>
+                <Accordion.Body>
+                  <SoundBar />
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
           </Container>
-          <div>
+          <Stack>
             <VideoItems
               videos={relatedVideos.slice(
                 postsPerPage * (currentPage - 1),
@@ -102,7 +109,7 @@ const VideoDisplay = () => {
               nextPage={nextPage}
               previousPage={previousPage}
             />
-          </div>
+          </Stack>
         </div>
       </Stack>
     </React.Fragment>

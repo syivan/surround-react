@@ -9,7 +9,7 @@ const SearchFeed = () => {
   const [videos, setVideos] = useState([]);
   const { searchTerm } = useParams();
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 8;
+  const postsPerPage = 6;
   const totalPosts = videos.length;
 
   const previousPage = () => {
@@ -28,11 +28,13 @@ const SearchFeed = () => {
 
   useEffect(() => {
     fetchAPI(`search?part=snippet&q=${searchTerm}`)
-      .then((data) => setVideos(data.items))
+      .then((data) => setVideos(data.items.filter((item) => item.id.kind === 'youtube#video').slice(0, 36)))
       .catch(console.log("PROMISE FAILED"));
 
     setCurrentPage(1);
   }, [searchTerm]);
+
+  console.log(videos);
 
   return (
     <React.Fragment>

@@ -32,7 +32,7 @@ iframe {
 }
 
 .react-player {
-  height: 72vh !important;
+  height: 62vh !important;
   width: 100% !important;
 }
 
@@ -128,8 +128,4 @@ iframe {
 .search-button {
   flex-grow: 1;
   width: 10%;
-}
-
-.main-container {
-  width: 3000px;
 }

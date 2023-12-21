@@ -44,7 +44,7 @@ const VideoItems = ({ videos, direction }) => {
     );
   } else {
     return (
-      <Row md={4} lg={6} xs={2} xl={8} className="mt-4 d-flex flex-wrap">
+      <Row md={2} lg={3} xs={1} className="mt-4 d-flex flex-wrap">
         {videoMap}
       </Row>
     );

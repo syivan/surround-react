@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import NavHeader from "./components/NavHeader.js";
-import { Container, Row, Col, FormControl } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import SearchBar from "./components/SearchBar.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchFeed from "./components/SearchFeed.js";
@@ -11,7 +11,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <NavHeader />
-      <Container fluid>
+      <Container>
         <SearchBar />
         <Routes>
           <Route path="/" element={<SearchFeed />}></Route>
