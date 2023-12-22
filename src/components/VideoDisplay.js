@@ -38,7 +38,7 @@ const VideoDisplay = () => {
     );
 
     fetchAPI(`search?part=snippet&relatedToVideoId=${videoId}&type=video`).then(
-      (data) => setRelatedVideos(data.items)
+      (data) => setRelatedVideos(data.items.filter((item) => item.id.kind === 'youtube#video'))
     );
   }, [videoId]);
 
@@ -85,7 +85,7 @@ const VideoDisplay = () => {
                 </Badge>
               </p>
             </Stack>
-            <Accordion>
+            <Accordion className="mb-4">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>A Sound Ambience</Accordion.Header>
                 <Accordion.Body>
@@ -95,20 +95,22 @@ const VideoDisplay = () => {
             </Accordion>
           </Container>
           <Stack>
-            <VideoItems
-              videos={relatedVideos.slice(
-                postsPerPage * (currentPage - 1),
-                postsPerPage * currentPage
-              )}
-              direction={"column"}
-            />
-            <Paginate
-              postsPerPage={4}
-              totalPosts={totalPosts}
-              currentPage={currentPage}
-              nextPage={nextPage}
-              previousPage={previousPage}
-            />
+            <div>
+              <VideoItems
+                videos={relatedVideos.slice(
+                  postsPerPage * (currentPage - 1),
+                  postsPerPage * currentPage
+                )}
+                direction={"column"}
+              />
+              <Paginate
+                postsPerPage={4}
+                totalPosts={totalPosts}
+                currentPage={currentPage}
+                nextPage={nextPage}
+                previousPage={previousPage}
+              />
+            </div>
           </Stack>
         </div>
       </Stack>
