@@ -48,17 +48,9 @@ const VideoDisplay = () => {
 
   return (
     <React.Fragment>
-      <Stack direction={{ xs: "vertical", md: "horizontal" }} className="mt-4">
+      <Stack direction={{ xs: "vertical", md: "horizontal" }} className="display-container">
         <div className="d-flex">
-          <Container
-            style={{
-              width: "80%",
-              position: "sticky",
-              top: "86px",
-              marginRight: "0px",
-            }}
-            className="ms-1"
-          >
+          <Container className="video-ambience-container">
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${videoId}`}
               className="react-player"
@@ -85,7 +77,7 @@ const VideoDisplay = () => {
                 </Badge>
               </p>
             </Stack>
-            <Accordion className="mb-4">
+            <Accordion className="accordion">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>A Sound Ambience</Accordion.Header>
                 <Accordion.Body>
