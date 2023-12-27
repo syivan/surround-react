@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 function NavHeader() {
   const navigate = useNavigate();
   function handleClick() {
-    navigate("/search/motivation");
+    navigate("/");
   }
 
   return (
     <>
-      <Navbar className="navbarContainer bg-primary mb-3">
+      <Navbar className="navbar-container mb-3">
         <Container fluid>
           <Navbar.Brand
             href="#home"

@@ -7,6 +7,7 @@ import SearchFeed from "./components/SearchFeed.js";
 import VideoDisplay from "./components/VideoDisplay.js";
 import Footer from "./components/Footer.js";
 import ".//style.css";
+import Home from "./components/Home.js";
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
       <Container>
         <SearchBar />
         <Routes>
-          <Route path="/" element={<SearchFeed />}></Route>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/search/:searchTerm" element={<SearchFeed />}></Route>
           <Route path="/video/:videoId" element={<VideoDisplay />}></Route>
         </Routes>

@@ -8,13 +8,11 @@ export default function SearchBar() {
   const navigate = useNavigate("");
 
   const handleChange = (event) => {
-    console.log(searchTerm);
     setSearchTerm(event.target.value);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(searchTerm);
 
     if (searchTerm) {
       navigate(`/search/${searchTerm}`);
@@ -22,6 +20,13 @@ export default function SearchBar() {
 
     setSearchTerm("");
   };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter' && searchTerm) {
+      navigate(`/search/${searchTerm}`);
+      setSearchTerm("");
+    }
+  }
 
   return (
     <Stack direction="horizontal" gap={3} className="search-section">
@@ -32,6 +37,7 @@ export default function SearchBar() {
         value={searchTerm}
         onChange={handleChange}
         className="search-bar"
+        onKeyDown={handleKeyPress}
       ></Form.Control>
       <Button
         type="input"

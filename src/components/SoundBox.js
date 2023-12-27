@@ -17,7 +17,7 @@ const SoundBox = ({ playOn, data, playerID }) => {
   }, [volume, playOn]);
 
   return (
-    <div className="d-flex justify-content-center">
+    <div className="sound-box-container">
       <img
         src={require(`./..//static/img/${data.imageID}`)}
         height={100}
