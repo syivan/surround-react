@@ -11,6 +11,7 @@ import VideoItems from "./VideoItems";
 import Paginate from "./Paginate";
 import "../style.css";
 import SoundBar from "./SoundBar";
+import SearchBar from "./SearchBar";
 
 const VideoDisplay = () => {
   const [videoDetail, setVideoDetail] = useState(null);
@@ -48,6 +49,7 @@ const VideoDisplay = () => {
 
   return (
     <React.Fragment>
+      <SearchBar/>
       <Stack direction={{ xs: "vertical", md: "horizontal" }} className="display-container">
         <div className="d-flex">
           <Container className="video-ambience-container">

@@ -1,12 +1,13 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React from "react";
+import { Container } from "react-bootstrap";
 
 const Home = () => {
-    return (
-        <Container>
-            <h2>The Sound Ambience</h2>
-        </Container>
-    )
-}
+  return (
+    <Container className="home-container">
+      <h1>The Sound Ambience</h1>
+      <h5>Ambience how way you prefer it.</h5>
+    </Container>
+  );
+};
 
-export default Home
+export default Home;

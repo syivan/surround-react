@@ -14,7 +14,6 @@ const App = () => {
     <BrowserRouter>
       <NavHeader />
       <Container>
-        <SearchBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/search/:searchTerm" element={<SearchFeed />}></Route>

@@ -4,6 +4,7 @@ import { fetchAPI } from "../utils/fetchAPI.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Paginate from "./Paginate";
+import SearchBar from "./SearchBar.js";
 
 const SearchFeed = () => {
   const [videos, setVideos] = useState([]);
@@ -28,7 +29,13 @@ const SearchFeed = () => {
 
   useEffect(() => {
     fetchAPI(`search?part=snippet&q=${searchTerm}`)
-      .then((data) => setVideos(data.items.filter((item) => item.id.kind === 'youtube#video').slice(0, 36)))
+      .then((data) =>
+        setVideos(
+          data.items
+            .filter((item) => item.id.kind === "youtube#video")
+            .slice(0, 36)
+        )
+      )
       .catch(console.log("PROMISE FAILED"));
 
     setCurrentPage(1);
@@ -38,9 +45,11 @@ const SearchFeed = () => {
 
   return (
     <React.Fragment>
+      <SearchBar />
       <div>
         <h3 className="search-banner">
-          Search Results for: <span style={{ color: "red" }}>{searchTerm}</span>
+          Search Results for:{" "}
+          <span className="query-heading">{searchTerm}</span>
         </h3>
         <VideoItems
           videos={videos.slice(

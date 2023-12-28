@@ -17,7 +17,7 @@ function NavHeader() {
             className="text-white ms-3"
             onClick={handleClick}
           >
-            A SOUND AMBIENCE
+            THE SOUND AMBIENCE
           </Navbar.Brand>
         </Container>
       </Navbar>
