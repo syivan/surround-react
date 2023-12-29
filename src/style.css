@@ -206,3 +206,8 @@ body {
   color: red;
   text-transform: none;
 }
+
+.sound-info {
+  margin: auto;
+  margin-left: 0;
+}

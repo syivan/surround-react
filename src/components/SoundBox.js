@@ -25,12 +25,7 @@ const SoundBox = ({ playOn, data, playerID }) => {
         alt={data.name}
         className="icon-prop"
       ></img>
-      <div
-        style={{
-          margin: "auto",
-          marginLeft: "0",
-        }}
-      >
+      <div className="sound-info">
         <h3 className="sound-label">{data.name}</h3>
         <input
           type="range"
