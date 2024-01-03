@@ -5,7 +5,7 @@ import SearchBar from "./components/SearchBar.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchFeed from "./components/SearchFeed.js";
 import VideoDisplay from "./components/VideoDisplay.js";
-import Footer from "./components/Footer.js";
+import Footer from "./components/NavFooter.js";
 import ".//style.css";
 import Home from "./components/Home.js";
 

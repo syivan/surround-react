@@ -10,7 +10,7 @@ function NavHeader() {
 
   return (
     <>
-      <Navbar className="navbar-container mb-3">
+      <Navbar className="navbar-container">
         <Container fluid>
           <Navbar.Brand
             href="#home"

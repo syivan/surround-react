@@ -16,7 +16,7 @@ const PlayControl = ({ button }) => {
         changeOverlay();
       }}
     >
-      {isPlaying ? "Pause" : "Play"}
+      {isPlaying ? "Rest" : "Play"}
     </Button>
   );
 };

@@ -25,29 +25,31 @@ const SoundBox = ({ playOn, data, playerID }) => {
         alt={data.name}
         className="icon-prop"
       ></img>
-      <div className="sound-info">
-        <h3 className="sound-label">{data.name}</h3>
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.02"
-          className="slider"
-          id="rain-slider"
-          value={volume}
-          onChange={(e) => {
-            setVolume(e.target.value);
-          }}
-        ></input>
+      <div className="sound-info-container">
+        <div className="sound-info">
+          <h3 className="sound-label">{data.name}</h3>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.02"
+            className="slider"
+            id="rain-slider"
+            value={volume}
+            onChange={(e) => {
+              setVolume(e.target.value);
+            }}
+          ></input>
 
-        {
-          <audio preload="auto" id={playerID} loop>
-            <source
-              src={require(`./..//static/audio/${data.audioID}`)}
-              type="audio/mp4"
-            ></source>
-          </audio>
-        }
+          {
+            <audio preload="auto" id={playerID} loop>
+              <source
+                src={require(`./..//static/audio/${data.audioID}`)}
+                type="audio/mp4"
+              ></source>
+            </audio>
+          }
+        </div>
       </div>
     </div>
   );
