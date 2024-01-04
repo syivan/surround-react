@@ -1,3 +1,7 @@
+:root {
+  --primary-color: #1a1a1a;
+}
+
 iframe {
   display: block;
   width: 100%;
@@ -20,7 +24,7 @@ iframe {
 
 .search-banner {
   font-size: 1.2rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .react-player {
@@ -31,7 +35,7 @@ iframe {
 /* DISPLAY COMPONENTS */
 .channel-title {
   font-weight: bold;
-  color: black;
+  color: var(--primary-color);
 }
 
 .video-title {
@@ -99,7 +103,7 @@ iframe {
 }
 
 .play-button-section {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-left: 1.5rem;
 }
 
@@ -124,7 +128,7 @@ iframe {
 }
 
 footer {
-  background-color: #1a1a1a;
+  background-color: var(--primary-color);
   font-size: 15px;
   color: #fff;
   padding: 35px;
@@ -171,11 +175,12 @@ body {
 .sound-box-container {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .navbar-container {
-  background-color: #1a1a1a;
+  background-color: var(--primary-color);
+  margin-bottom: 1.5rem;
 }
 
 .buffer-container {
@@ -227,5 +232,43 @@ body {
 }
 
 .footer-links li {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.copyright-statement {
+  flex-grow: 5;
+}
+
+.footer-links {
+  flex-grow: 1;
+}
+
+.purpose-declaration {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.circular {
+  border-radius: 50%;
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+.statement {
+  flex: 4;
+}
+
+.about-main-header {
+  display: flex;
+  justify-content: center;
+}
+
+.about-main-header h2 {
+  font-size: xx-large;
+  margin-top: 1rem;
 }

@@ -39,7 +39,12 @@ const VideoDisplay = () => {
     );
 
     fetchAPI(`search?part=snippet&relatedToVideoId=${videoId}&type=video`).then(
-      (data) => setRelatedVideos(data.items.filter((item) => item.id.kind === 'youtube#video'))
+      (data) =>
+        setRelatedVideos(
+          data.items
+            .filter((item) => item.id.kind === "youtube#video")
+            .slice(0, 36)
+        )
     );
   }, [videoId]);
 
@@ -49,8 +54,11 @@ const VideoDisplay = () => {
 
   return (
     <React.Fragment>
-      <SearchBar/>
-      <Stack direction={{ xs: "vertical", md: "horizontal" }} className="display-container">
+      <SearchBar />
+      <Stack
+        direction={{ xs: "vertical", md: "horizontal" }}
+        className="display-container"
+      >
         <div className="d-flex">
           <Container className="video-ambience-container">
             <ReactPlayer

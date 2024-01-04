@@ -1,7 +1,7 @@
 import React from "react";
-import { Row, Container, Col } from "react-bootstrap";
+import { Row, Container } from "react-bootstrap";
 import SoundBox from "./SoundBox";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PlayControl from "./PlayControl";
 import { data } from "../files";
 
@@ -15,7 +15,7 @@ const SoundBar = () => {
   return (
     <React.Fragment>
       <Container>
-        <Row lg={3} md={2} sm={1} className="mt-1">
+        <Row lg={3} md={2} sm={1}>
           <SoundBox
             key={1}
             playOn={isPlaying}

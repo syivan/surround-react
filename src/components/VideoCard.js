@@ -13,11 +13,11 @@ const VideoCard = ({
   return (
     <Card
       style={{
-        width: { md: "18px", xs: "100%" },
+        width: { md: "15px", xs: "100%" },
         borderRadius: "12px",
         overflow: "hidden",
+        marginBottom: "1rem",
       }}
-      className="mb-3"
     >
       <Link to={`/video/${videoId}`}>
         <Card.Img

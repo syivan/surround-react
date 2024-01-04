@@ -1,15 +1,22 @@
 import React from "react";
 import { Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
     <React.Fragment>
       <footer className="footer-section">
-        <div>Copyright © {year}. All Rights Reserved.</div>
+        <div className="copyright-statement">
+          Copyright © {year}. All Rights Reserved.
+        </div>
         <Row lg={2} md={2} xs={2} className="footer-links">
-          <li>hi</li>
-          <li>hello</li>
+          <Link to="/search/Music Today">
+            <li>Youtube Client</li>
+          </Link>
+          <Link to="/about">
+            <li>About</li>
+          </Link>
         </Row>
       </footer>
     </React.Fragment>
