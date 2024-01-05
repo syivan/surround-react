@@ -272,3 +272,19 @@ body {
   font-size: xx-large;
   margin-top: 1rem;
 }
+
+.credits {
+  display: flex;
+}
+
+.image-credits {
+  flex: 1;
+}
+
+.audio-credits {
+  flex: 1;
+}
+
+.credits li {
+  line-height: 2rem;
+}
