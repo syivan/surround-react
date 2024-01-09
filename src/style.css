@@ -20,8 +20,12 @@ iframe {
 .card-title {
   text-transform: capitalize;
   letter-spacing: normal;
+  font-weight: bold;
 }
 
+.channel-title {
+  font-weight: bold;
+}
 .search-banner {
   font-size: 1.2rem;
   margin-top: 1.5rem;
@@ -43,6 +47,7 @@ iframe {
   font-weight: bold;
   text-transform: capitalize;
   letter-spacing: normal;
+  margin-top: 1rem;
 }
 
 /* PAGINATION COMPONENTS */
@@ -127,6 +132,12 @@ iframe {
   width: 10%;
 }
 
+.card {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
 footer {
   background-color: var(--primary-color);
   font-size: 15px;
@@ -169,7 +180,7 @@ body {
 .search-feed-view {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .sound-box-container {
@@ -287,4 +298,12 @@ body {
 
 .credits li {
   line-height: 2rem;
+}
+
+.video-metrics {
+  margin-left: auto;
+}
+
+.full-content {
+  display: flex;
 }

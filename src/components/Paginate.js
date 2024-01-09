@@ -14,7 +14,7 @@ const Paginate = ({
     pageNumbers.push(i);
   }
   return (
-    <div className="pagination-container">
+    <section className="pagination-container">
       <ul className="pagination">
         <li onClick={previousPage} className="page-number">
           Prev
@@ -35,7 +35,7 @@ const Paginate = ({
           Next
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 

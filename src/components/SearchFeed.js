@@ -46,7 +46,7 @@ const SearchFeed = () => {
   return (
     <React.Fragment>
       <SearchBar />
-      <div>
+      <section>
         <h3 className="search-banner">
           Search Results for:{" "}
           <span className="query-heading">{searchTerm}</span>
@@ -57,7 +57,7 @@ const SearchFeed = () => {
             postsPerPage * currentPage
           )}
         />
-      </div>
+      </section>
       <Paginate
         postsPerPage={postsPerPage}
         totalPosts={totalPosts}

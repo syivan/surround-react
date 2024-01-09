@@ -7,9 +7,9 @@ const Footer = () => {
   return (
     <React.Fragment>
       <footer className="footer-section">
-        <div className="copyright-statement">
+        <section className="copyright-statement">
           Copyright © {year}. All Rights Reserved.
-        </div>
+        </section>
         <Row lg={2} md={2} xs={2} className="footer-links">
           <Link to="/search/Music Today">
             <li>Youtube Client</li>

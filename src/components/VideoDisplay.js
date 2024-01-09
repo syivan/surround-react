@@ -59,20 +59,20 @@ const VideoDisplay = () => {
         direction={{ xs: "vertical", md: "horizontal" }}
         className="display-container"
       >
-        <div className="d-flex">
+        <section className="full-content">
           <Container className="video-ambience-container">
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${videoId}`}
               className="react-player"
               controls={true}
             />
-            <h5 className="mt-3 video-title">{videoDetail.snippet.title}</h5>
+            <h5 className="video-title">{videoDetail.snippet.title}</h5>
             <Stack direction="horizontal" gap={3}>
               <p className="channel-title">
                 <span style={{ color: "red" }}>Channel:</span>{" "}
                 {videoDetail.snippet.channelTitle}
               </p>
-              <p className="ms-auto">
+              <p className="video-metrics">
                 <Badge bg="light" text="dark">
                   {parseInt(videoDetail.statistics.viewCount).toLocaleString() +
                     " "}
@@ -97,7 +97,7 @@ const VideoDisplay = () => {
             </Accordion>
           </Container>
           <Stack>
-            <div>
+            <section>
               <VideoItems
                 videos={relatedVideos.slice(
                   postsPerPage * (currentPage - 1),
@@ -112,9 +112,9 @@ const VideoDisplay = () => {
                 nextPage={nextPage}
                 previousPage={previousPage}
               />
-            </div>
+            </section>
           </Stack>
-        </div>
+        </section>
       </Stack>
     </React.Fragment>
   );

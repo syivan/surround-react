@@ -54,11 +54,11 @@ const SoundBar = () => {
           />
         </Row>
       </Container>
-      <div className="play-section">
+      <section className="play-section">
         <div className="play-button-section">
           <PlayControl button={controlButton} status={isPlaying} />
         </div>
-      </div>
+      </section>
     </React.Fragment>
   );
 };

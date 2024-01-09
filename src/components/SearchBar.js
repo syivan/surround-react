@@ -17,16 +17,13 @@ export default function SearchBar() {
     if (searchTerm) {
       navigate(`/search/${searchTerm}`);
     }
-
-    setSearchTerm("");
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter' && searchTerm) {
+    if (event.key === "Enter" && searchTerm) {
       navigate(`/search/${searchTerm}`);
-      setSearchTerm("");
     }
-  }
+  };
 
   return (
     <Stack direction="horizontal" gap={3} className="search-section">

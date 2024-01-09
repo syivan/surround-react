@@ -1,6 +1,7 @@
 import React from "react";
 
 const About = () => {
+  console.log(process.env.REACT_APP_YT_KEY);
   return (
     <React.Fragment>
       <section className="about-main-header">

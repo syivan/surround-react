@@ -17,7 +17,7 @@ const SoundBox = ({ playOn, data, playerID }) => {
   }, [volume, playOn]);
 
   return (
-    <div className="sound-box-container">
+    <section className="sound-box-container">
       <img
         src={require(`./..//static/img/${data.imageID}`)}
         height={100}
@@ -25,7 +25,7 @@ const SoundBox = ({ playOn, data, playerID }) => {
         alt={data.name}
         className="icon-prop"
       ></img>
-      <div className="sound-info-container">
+      <section className="sound-info-container">
         <div className="sound-info">
           <h3 className="sound-label">{data.name}</h3>
           <input
@@ -50,8 +50,8 @@ const SoundBox = ({ playOn, data, playerID }) => {
             </audio>
           }
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };
 
